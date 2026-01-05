@@ -1,0 +1,27 @@
+[
+    {
+        "username": "Aarav Mehta",
+        "rating": 5,
+        "feedback": "Working with this production team was an incredible experience. From concept development to final edit, everything was handled with creativity and professionalism. The visuals exceeded our expectations and the storytelling was powerful."
+    },
+    {
+        "username": "Neha Kapoor",
+        "rating": 5,
+        "feedback": "Outstanding work! The team perfectly captured the emotion and message we wanted to convey. Their attention to detail, cinematography, and post-production quality truly set them apart."
+    },
+    {
+        "username": "Rohan Verma",
+        "rating": 4.5,
+        "feedback": "Highly professional and easy to work with. The production quality was top-notch, and deadlines were met without compromise. Would definitely collaborate again for future projects related to films and commercials."
+    },
+    {
+        "username": "Simran Kaur",
+        "rating": 5,
+        "feedback": "A creative powerhouse! They transformed our idea into a visually stunning film. The direction, editing, and sound design were flawless. Truly one of the best film production experiences we’ve had."
+    },
+    {
+        "username": "Aditya Sharma",
+        "rating": 4,
+        "feedback": "Great storytelling and excellent production value. The team was responsive, passionate, and committed to delivering quality content. A reliable choice for any film or video production needs."
+    }
+]

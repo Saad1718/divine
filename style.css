@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =====================
+   BODY & GLOBAL
+===================== */
+body {
+    background: #ffffff;
+    color: #222222;
+    font-family: 'poppins', sans-serif;
+}
+
+/* GLOBAL */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section.light {
+    background: #ffffff;
+}
+
+.section.soft {
+    background: #f4f7ff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.section-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #555555;
+}
+
+/* =====================
+   HEADER (BLUE)
+===================== */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.desktop-nav a {
+    margin-left: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.desktop-nav a:hover {
+    opacity: 0.8;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* =====================
+   MOBILE NAV (BLUE)
+===================== */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #6366f1;
+}
+
+.mobile-nav a {
+    padding: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* =========================
+   SLIDES
+========================= */
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg);
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.2s ease, transform 8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1.05);
+    z-index: 1;
+    animation: bgPan 20s ease-in-out infinite alternate;
+}
+
+/* =========================
+   CINEMATIC BG MOTION
+========================= */
+
+@keyframes bgPan {
+    from {
+        background-position: center top;
+    }
+
+    to {
+        background-position: center bottom;
+    }
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.35));
+    z-index: 1;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 760px;
+    padding: 20px;
+}
+
+/* Title */
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Subtitle */
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* =========================
+   TEXT ANIMATIONS
+========================= */
+
+.hero-slide.active h1 {
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-slide.active p {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-slide.active .hero-buttons {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    padding: 14px 34px;
+    border-radius: 30px;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background: #6366f1;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #162fc4;
+}
+
+.btn.outline {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn.outline:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-slider {
+        min-height: 100svh;
+    }
+
+    .hero-slide {
+        background-size: cover;
+        background-position: center;
+        transform: scale(1);
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-content {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 14px 0;
+        text-align: center;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   OUR WORK – LIGHT CINEMATIC
+========================= */
+.our-work {
+    padding: 120px 80px;
+    position: relative;
+    background:
+        radial-gradient(800px 400px at 15% 10%,
+            rgba(99, 102, 241, 0.10),
+            transparent 60%),
+        radial-gradient(700px 350px at 85% 85%,
+            rgba(56, 189, 248, 0.10),
+            transparent 60%),
+        linear-gradient(180deg,
+            #f9fafb,
+            #eef2ff);
+    color: #0f172a;
+    overflow: hidden;
+}
+
+/* subtle film grain */
+.our-work::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.025;
+    pointer-events: none;
+}
+
+/* CONTAINER */
+.work-container {
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+}
+
+/* HEADER */
+.work-header {
+    max-width: 620px;
+    margin-bottom: 80px;
+}
+
+.work-header h2 {
+    font-size: 50px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.work-header h2 span {
+    background: #2563eb;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.work-header p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* GRID */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.work-card {
+    position: relative;
+    height: 440px;
+    border-radius: 26px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #e5e7eb;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.12),
+        0 10px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 1.3s ease;
+}
+
+/* IMAGE MOTION */
+.work-card:hover img {
+    transform: scale(1.25);
+}
+
+/* SOFT LIGHT SWEEP */
+.work-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.work-card:hover::after {
+    opacity: 1;
+}
+
+/* INFO PANEL (LIGHT GLASS) */
+.work-info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.work-card:hover .work-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* GENRE CHIP */
+.genre {
+    display: inline-block;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* TEXT */
+.work-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.work-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .our-work {
+        padding: 80px 30px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-header h2 {
+        font-size: 36px;
+    }
+}
+
+
+
+/* =====================
+   PORTFOLIO
+===================== */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* =====================
+   FOOTER (BLUE)
+===================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e40ff;
+    color: #ffffff;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
